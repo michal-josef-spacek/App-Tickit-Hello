@@ -5,7 +5,7 @@ use warnings;
 
 use Getopt::Std;
 use Tickit;
-use Tickit::Widget::HelloWorld::Common;
+use Tickit::Widget::Static;
 
 our $VERSION = 0.01;
 
@@ -38,7 +38,7 @@ sub run {
 	}
 	my $message = $ARGV[0] || 'Hello world!';
 
-	my $widget = Tickit::Widget::HelloWorld::Common->new(
+	my $widget = Tickit::Widget::Static->new(
 		'text' => $message,
 	);
 

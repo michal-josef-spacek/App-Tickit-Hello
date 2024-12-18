@@ -21,7 +21,7 @@ readme_from 'bin/tickit-hello';
 recursive_author_tests('xt');
 requires 'Getopt::Std' => 0;
 requires 'Tickit' => 0;
-requires 'Tickit::Widget::HelloWorld::Common' => 0;
+requires 'Tickit::Widget::Static' => 0;
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/App-Tickit-Hello/issues',
 resources 'homepage' => 'https://github.com/michal-josef-spacek/App-Tickit-Hello';
 resources 'repository' => 'git://github.com/michal-josef-spacek/App-Tickit-Hello';
