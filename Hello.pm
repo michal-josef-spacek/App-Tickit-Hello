@@ -32,15 +32,17 @@ sub run {
 	# Process arguments.
 	$self->{'_opts'} = {
 		'a' => 'center',
+		'b' => 'black',
 		'f' => 'green',
 		'h' => 0,
 		'v' => 'middle',
 	};
-	if (! getopts('a:f:hv:', $self->{'_opts'})
+	if (! getopts('a:b:f:hv:', $self->{'_opts'})
 		|| $self->{'_opts'}->{'h'}) {
 
-		print STDERR "Usage: $0 [-a horiz_align] [-f fg_color] [-h] [-v vert_align] [--version]\n";
+		print STDERR "Usage: $0 [-a horiz_align] [-b bg_color] [-f fg_color] [-h] [-v vert_align] [--version]\n";
 		print STDERR "\t-a horiz_align\tHorizontal align (left, center - default, right).\n";
+		print STDERR "\t-b bg_color\tBackground color (default is black).\n";
 		print STDERR "\t-f fg_color\tForeground color (default is green).\n";
 		print STDERR "\t-h\t\tPrint help.\n";
 		print STDERR "\t-v vert_align\tVertical align (top, middle - default, bottom).\n";
@@ -63,13 +65,16 @@ sub run {
 		return 1;
 	}
 
+	my $style_hr = {};
+	if (defined $self->{'_opts'}->{'b'}) {
+		$style_hr->{'bg'} = $self->{'_opts'}->{'b'};
+	}
+	if (defined $self->{'_opts'}->{'f'}) {
+		$style_hr->{'fg'} = $self->{'_opts'}->{'f'};
+	}
 	my $widget = Tickit::Widget::Static->new(
 		'align' => $self->{'_opts'}->{'a'},
-		defined $self->{'_opts'}->{'f'} ? (
-			'style' => {
-				'fg' => $self->{'_opts'}->{'f'},
-			},
-		) : (),
+		'style' => $style_hr,
 		'text' => $message,
 		'valign' => $self->{'_opts'}->{'v'},
 	);

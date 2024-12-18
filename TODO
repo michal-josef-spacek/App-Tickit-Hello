@@ -1,6 +1,5 @@
 TODO
 ====
-3. Support for bg color.
 4. Add doc.
 5. Add tests.
 6. Add support for align with numeric values.
@@ -13,4 +12,7 @@ Implement vertical align.
 OK [20241218] skim
 
 2. Support for fg color.
+OK [20241218] skim
+
+3. Support for bg color.
 OK [20241218] skim
