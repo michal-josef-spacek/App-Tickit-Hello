@@ -28,7 +28,7 @@ sub run {
 	$self->{'_opts'} = {
 		'h' => 0,
 	};
-	if (! getopts('hv:', $self->{'_opts'})
+	if (! getopts('h', $self->{'_opts'})
 		|| $self->{'_opts'}->{'h'}) {
 
 		print STDERR "Usage: $0 [-h] [--version] [message]\n";
