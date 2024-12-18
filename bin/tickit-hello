@@ -28,7 +28,7 @@ tickit-hello - Tickit application with hello world.
 
 =head1 SYNOPSIS
 
- tickit-hello [-a align] [-h] [--version] [message]
+ tickit-hello [-a horiz_align] [-h] [--version] [message]
 
 =head1 DESCRIPTION
 
@@ -40,9 +40,9 @@ Application could present text string in screen.
 
 =over 8
 
-=item * C<-a align>
+=item * C<-a horiz_align>
 
-Vertical align.
+Horizontal align.
 
 Possible values are:
 

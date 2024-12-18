@@ -9,7 +9,7 @@ use Readonly;
 use Tickit;
 use Tickit::Widget::Static;
 
-Readonly::Array our @VERTICAL_ALIGNS => qw(left center right);
+Readonly::Array our @HORIZONTAL_ALIGNS => qw(left center right);
 
 our $VERSION = 0.01;
 
@@ -36,16 +36,17 @@ sub run {
 	if (! getopts('a:h', $self->{'_opts'})
 		|| $self->{'_opts'}->{'h'}) {
 
-		print STDERR "Usage: $0 [-a align] [-h] [--version]\n";
-		print STDERR "\t-a align\tVertical align (left - default, center, right).\n";
+		print STDERR "Usage: $0 [-a horiz_align] [-h] [--version]\n";
+		print STDERR "\t-a horiz_align\tHorizontal align (left - default, center, right).\n";
 		print STDERR "\t-h\t\tPrint help.\n";
 		print STDERR "\t--version\tPrint version.\n";
 		return 1;
 	}
 	my $message = $ARGV[0] || 'Hello world!';
 
-	if (none { $self->{'_opts'}->{'a'} eq $_ } @VERTICAL_ALIGNS) {
-		print STDERR "Bad vertical align.\n";
+	# Horizontal align.
+	if (none { $self->{'_opts'}->{'a'} eq $_ } @HORIZONTAL_ALIGNS) {
+		print STDERR "Bad horizontal align.\n";
 		return 1;
 	}
 	# XXX Tickit::Widget::Static uses 'centre'.
