@@ -12,7 +12,7 @@ use Tickit::Widget::Static;
 Readonly::Array our @HORIZONTAL_ALIGNS => qw(left center right);
 Readonly::Array our @VERTICAL_ALIGNS => qw(top middle bottom);
 
-our $VERSION = 0.01;
+our $VERSION = 0.02;
 
 # Constructor.
 sub new {
@@ -162,6 +162,6 @@ BSD 2-Clause License
 
 =head1 VERSION
 
-0.01
+0.02
 
 =cut
