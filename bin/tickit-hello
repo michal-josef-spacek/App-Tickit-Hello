@@ -28,7 +28,7 @@ tickit-hello - Tickit application with hello world.
 
 =head1 SYNOPSIS
 
- tickit-hello [-a horiz_align] [-h] [--version] [message]
+ tickit-hello [-a horiz_align] [-h] [-v vert_align] [--version] [message]
 
 =head1 DESCRIPTION
 
@@ -59,6 +59,22 @@ Possible values are:
 =item * C<-h>
 
 Print help.
+
+=item * C<-v vert_align>
+
+Vertical align.
+
+Possible values are:
+
+=over
+
+=item * top (default)
+
+=item * middle
+
+=item * bottom
+
+=back
 
 =item * C<--version>
 

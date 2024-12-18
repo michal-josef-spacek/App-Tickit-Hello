@@ -10,6 +10,7 @@ use Tickit;
 use Tickit::Widget::Static;
 
 Readonly::Array our @HORIZONTAL_ALIGNS => qw(left center right);
+Readonly::Array our @VERTICAL_ALIGNS => qw(top middle bottom);
 
 our $VERSION = 0.01;
 
@@ -32,13 +33,15 @@ sub run {
 	$self->{'_opts'} = {
 		'a' => 'left',
 		'h' => 0,
+		'v' => 'top',
 	};
-	if (! getopts('a:h', $self->{'_opts'})
+	if (! getopts('a:hv:', $self->{'_opts'})
 		|| $self->{'_opts'}->{'h'}) {
 
-		print STDERR "Usage: $0 [-a horiz_align] [-h] [--version]\n";
+		print STDERR "Usage: $0 [-a horiz_align] [-h] [-v vert_align] [--version]\n";
 		print STDERR "\t-a horiz_align\tHorizontal align (left - default, center, right).\n";
 		print STDERR "\t-h\t\tPrint help.\n";
+		print STDERR "\t-v vert_align\tVertical align (top - default, middle, bottom).\n";
 		print STDERR "\t--version\tPrint version.\n";
 		return 1;
 	}
@@ -52,9 +55,16 @@ sub run {
 	# XXX Tickit::Widget::Static uses 'centre'.
 	$self->{'_opts'}->{'a'} =~ s/center/centre/;
 
+	# Vertical align.
+	if (none { $self->{'_opts'}->{'v'} eq $_ } @VERTICAL_ALIGNS) {
+		print STDERR "Bad vertical align.\n";
+		return 1;
+	}
+
 	my $widget = Tickit::Widget::Static->new(
 		'align' => $self->{'_opts'}->{'a'},
 		'text' => $message,
+		'valign' => $self->{'_opts'}->{'v'},
 	);
 
 	Tickit->new('root' => $widget)->run;
