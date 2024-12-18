@@ -24,7 +24,7 @@ __END__
 
 =head1 NAME
 
-tickit-hello - TODO
+tickit-hello - Tickit application with hello world.
 
 =head1 SYNOPSIS
 
@@ -32,53 +32,31 @@ tickit-hello - TODO
 
 =head1 DESCRIPTION
 
-This tool is used to test libredwg DXF conversions on DWG file.
+This application is L<Tickit> hello world demo.
 
-The process is to convert DWG file to LibreDWG DXF representation, back to DWG
-and again to DXF. After this create diff between two DXF representations to
-output.
+Application could present text string in screen.
 
 =head1 ARGUMENTS
 
 =over 8
 
-=item * C<-d test_dir>
-
-Test directory. If doesn't exist, create dir in system tmp.
-
 =item * C<-h>
 
 Print help.
-
-=item * C<-v level>
-
-Verbosity level.
-
-Default value is 0, max is 9.
 
 =item * C<--version>
 
 Print version of script.
 
-=item * C<dwg_file>
+=item * C<message>
 
-AutoCAD DWG file to test.
+Text message to present on screen.
 
 =back
 
 =head1 EXAMPLE
 
- test-dwg-libredwg-dxf __FILE__.dwg
-
-=head1 SEE ALSO
-
-=over
-
-=item L<test-dwg-libredwg-dwgread>
-
-Script to test DWG files by LibreDWG dwgread command.
-
-=back
+ tickit-hello "Hello world!"
 
 =head1 REPOSITORY
 
