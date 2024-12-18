@@ -36,7 +36,7 @@ sub run {
 	if (! getopts('a:h', $self->{'_opts'})
 		|| $self->{'_opts'}->{'h'}) {
 
-		print STDERR "Usage: $0 [-a align] [-h] [--version] [message]\n";
+		print STDERR "Usage: $0 [-a align] [-h] [--version]\n";
 		print STDERR "\t-a align\tVertical align (left - default, center, right).\n";
 		print STDERR "\t-h\t\tPrint help.\n";
 		print STDERR "\t--version\tPrint version.\n";
