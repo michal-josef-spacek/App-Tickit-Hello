@@ -1,6 +1,5 @@
 TODO
 ====
-4. Add doc.
 5. Add tests.
 6. Add support for align with numeric values.
 7.
@@ -15,4 +14,7 @@ OK [20241218] skim
 OK [20241218] skim
 
 3. Support for bg color.
+OK [20241218] skim
+
+4. Add doc.
 OK [20241218] skim

@@ -23,6 +23,7 @@ meta-spec:
 name: App-Tickit-Hello
 no_index:
   directory:
+    - examples
     - inc
     - t
     - xt

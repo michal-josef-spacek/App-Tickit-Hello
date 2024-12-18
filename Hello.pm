@@ -87,3 +87,81 @@ sub run {
 1;
 
 __END__
+
+=pod
+
+=encoding utf8
+
+=head1 NAME
+
+App::Tickit::Hello - Base class for tickit-hello script.
+
+=head1 SYNOPSIS
+
+ use App::Tickit::Hello;
+
+ my $app = App::Tickit::Hello->new;
+ my $exit_code = $app->run;
+
+=head1 METHODS
+
+=head2 C<new>
+
+ my $app = App::Tickit::Hello->new;
+
+Constructor.
+
+Returns instance of object.
+
+=head2 C<run>
+
+ my $exit_code = $app->run;
+
+Run.
+
+Returns 1 for error, 0 for success.
+
+=head1 EXAMPLE
+
+=for comment filename=hello_default.pl
+
+ use strict;
+ use warnings;
+
+ use App::Tickit::Hello;
+
+ # Run.
+ exit App::Tickit::Hello->new->run;
+
+ # Output like:
+ # Green text 'Hello world!' in the middle of screen.
+
+=head1 DEPENDENCIES
+
+L<Getopt::Std>,
+L<List::Util>,
+L<Readonly>,
+L<Tickit>,
+L<Tickit::Widget::Static>.
+
+=head1 REPOSITORY
+
+L<https://github.com/michal-josef-spacek/App-Tickit-Hello>
+
+=head1 AUTHOR
+
+Michal Josef Špaček L<mailto:skim@cpan.org>
+
+L<http://skim.cz>
+
+=head1 LICENSE AND COPYRIGHT
+
+© 2024 Michal Josef Špaček
+
+BSD 2-Clause License
+
+=head1 VERSION
+
+0.01
+
+=cut
