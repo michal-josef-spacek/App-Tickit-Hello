@@ -2,7 +2,7 @@ NAME
     tickit-hello - Tickit application with hello world.
 
 SYNOPSIS
-     tickit-hello [-h] [--version] [message]
+     tickit-hello [-a align] [-h] [--version] [message]
 
 DESCRIPTION
     This application is Tickit hello world demo.
@@ -10,6 +10,18 @@ DESCRIPTION
     Application could present text string in screen.
 
 ARGUMENTS
+    *       "-a align"
+
+            Vertical align.
+
+            Possible values are:
+
+            *   left
+
+            *   center
+
+            *   right
+
     *       "-h"
 
             Print help.

@@ -4,8 +4,12 @@ use strict;
 use warnings;
 
 use Getopt::Std;
+use List::Util 1.33 qw(none);
+use Readonly;
 use Tickit;
 use Tickit::Widget::Static;
+
+Readonly::Array our @VERTICAL_ALIGNS => qw(left center right);
 
 our $VERSION = 0.01;
 
@@ -26,19 +30,29 @@ sub run {
 
 	# Process arguments.
 	$self->{'_opts'} = {
+		'a' => 'left',
 		'h' => 0,
 	};
-	if (! getopts('h', $self->{'_opts'})
+	if (! getopts('a:h', $self->{'_opts'})
 		|| $self->{'_opts'}->{'h'}) {
 
-		print STDERR "Usage: $0 [-h] [--version] [message]\n";
+		print STDERR "Usage: $0 [-a align] [-h] [--version] [message]\n";
+		print STDERR "\t-a align\tVertical align (left - default, center, right).\n";
 		print STDERR "\t-h\t\tPrint help.\n";
 		print STDERR "\t--version\tPrint version.\n";
 		return 1;
 	}
 	my $message = $ARGV[0] || 'Hello world!';
 
+	if (none { $self->{'_opts'}->{'a'} eq $_ } @VERTICAL_ALIGNS) {
+		print STDERR "Bad vertical align.\n";
+		return 1;
+	}
+	# XXX Tickit::Widget::Static uses 'centre'.
+	$self->{'_opts'}->{'a'} =~ s/center/centre/;
+
 	my $widget = Tickit::Widget::Static->new(
+		'align' => $self->{'_opts'}->{'a'},
 		'text' => $message,
 	);
 

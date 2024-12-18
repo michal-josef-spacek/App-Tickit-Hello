@@ -23,6 +23,8 @@ no_index:
     - xt
 requires:
   Getopt::Std: 0
+  List::Util: 1.33
+  Readonly: 0
   Tickit: 0
   Tickit::Widget::Static: 0
   perl: 5.6.0

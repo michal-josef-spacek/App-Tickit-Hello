@@ -20,6 +20,8 @@ perl_version 5.006;
 readme_from 'bin/tickit-hello';
 recursive_author_tests('xt');
 requires 'Getopt::Std' => 0;
+requires 'List::Util' => 1.33;
+requires 'Readonly' => 0;
 requires 'Tickit' => 0;
 requires 'Tickit::Widget::Static' => 0;
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/App-Tickit-Hello/issues',
