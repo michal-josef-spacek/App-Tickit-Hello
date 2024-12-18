@@ -47,10 +47,10 @@ sub help {
 	}
 	my $help = <<"END";
 Usage: $script [-a horiz_align] [-f fg_color] [-h] [-v vert_align] [--version]
-	-a horiz_align	Horizontal align (left - default, center, right).
-	-f fg_color	Foreground color (default is white).
+	-a horiz_align	Horizontal align (left, center - default, right).
+	-f fg_color	Foreground color (default is green).
 	-h		Print help.
-	-v vert_align	Vertical align (top - default, middle, bottom).
+	-v vert_align	Vertical align (top, middle - default, bottom).
 	--version	Print version.
 END
 
