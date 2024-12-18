@@ -48,9 +48,9 @@ Possible values are:
 
 =over
 
-=item * left (default)
+=item * left
 
-=item * center
+=item * center (default)
 
 =item * right
 
@@ -60,7 +60,7 @@ Possible values are:
 
 Foreground color.
 
-Default value is white.
+Default value is green.
 
 =item * C<-h>
 
@@ -74,9 +74,9 @@ Possible values are:
 
 =over
 
-=item * top (default)
+=item * top
 
-=item * middle
+=item * middle (default)
 
 =item * bottom
 

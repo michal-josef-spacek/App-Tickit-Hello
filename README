@@ -2,7 +2,7 @@ NAME
     tickit-hello - Tickit application with hello world.
 
 SYNOPSIS
-     tickit-hello [-a horiz_align] [-h] [-v vert_align] [--version] [message]
+     tickit-hello [-a horiz_align] [-f fg_color] [-h] [-v vert_align] [--version] [message]
 
 DESCRIPTION
     This application is Tickit hello world demo.
@@ -16,11 +16,17 @@ ARGUMENTS
 
             Possible values are:
 
-            *   left (default)
+            *   left
 
-            *   center
+            *   center (default)
 
             *   right
+
+    *       "-f fg_color"
+
+            Foreground color.
+
+            Default value is green.
 
     *       "-h"
 
@@ -32,9 +38,9 @@ ARGUMENTS
 
             Possible values are:
 
-            *   top (default)
+            *   top
 
-            *   middle
+            *   middle (default)
 
             *   bottom
 
