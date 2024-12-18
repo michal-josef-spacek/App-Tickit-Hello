@@ -21,5 +21,7 @@ META.yml
 README
 t/App-Tickit-Hello/01-use.t
 t/App-Tickit-Hello/02-version.t
+t/App-Tickit-Hello/03-new.t
+t/App-Tickit-Hello/04-run.t
 xt/App-Tickit-Hello/01-pod_coverage.t
 xt/App-Tickit-Hello/02-pod.t
