@@ -48,7 +48,7 @@ Possible values are:
 
 =over
 
-=item * left
+=item * left (default)
 
 =item * center
 
