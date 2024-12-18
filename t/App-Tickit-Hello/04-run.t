@@ -46,8 +46,9 @@ sub help {
 		$script =~ s/\\/\//msg;
 	}
 	my $help = <<"END";
-Usage: $script [-a horiz_align] [-h] [-v vert_align] [--version]
+Usage: $script [-a horiz_align] [-f fg_color] [-h] [-v vert_align] [--version]
 	-a horiz_align	Horizontal align (left - default, center, right).
+	-f fg_color	Foreground color (default is white).
 	-h		Print help.
 	-v vert_align	Vertical align (top - default, middle, bottom).
 	--version	Print version.

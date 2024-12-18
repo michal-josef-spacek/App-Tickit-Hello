@@ -32,14 +32,16 @@ sub run {
 	# Process arguments.
 	$self->{'_opts'} = {
 		'a' => 'left',
+		'f' => undef,
 		'h' => 0,
 		'v' => 'top',
 	};
-	if (! getopts('a:hv:', $self->{'_opts'})
+	if (! getopts('a:f:hv:', $self->{'_opts'})
 		|| $self->{'_opts'}->{'h'}) {
 
-		print STDERR "Usage: $0 [-a horiz_align] [-h] [-v vert_align] [--version]\n";
+		print STDERR "Usage: $0 [-a horiz_align] [-f fg_color] [-h] [-v vert_align] [--version]\n";
 		print STDERR "\t-a horiz_align\tHorizontal align (left - default, center, right).\n";
+		print STDERR "\t-f fg_color\tForeground color (default is white).\n";
 		print STDERR "\t-h\t\tPrint help.\n";
 		print STDERR "\t-v vert_align\tVertical align (top - default, middle, bottom).\n";
 		print STDERR "\t--version\tPrint version.\n";
@@ -63,6 +65,11 @@ sub run {
 
 	my $widget = Tickit::Widget::Static->new(
 		'align' => $self->{'_opts'}->{'a'},
+		defined $self->{'_opts'}->{'f'} ? (
+			'style' => {
+				'fg' => $self->{'_opts'}->{'f'},
+			},
+		) : (),
 		'text' => $message,
 		'valign' => $self->{'_opts'}->{'v'},
 	);

@@ -28,7 +28,7 @@ tickit-hello - Tickit application with hello world.
 
 =head1 SYNOPSIS
 
- tickit-hello [-a horiz_align] [-h] [-v vert_align] [--version] [message]
+ tickit-hello [-a horiz_align] [-f fg_color] [-h] [-v vert_align] [--version] [message]
 
 =head1 DESCRIPTION
 
@@ -55,6 +55,12 @@ Possible values are:
 =item * right
 
 =back
+
+=item * C<-f fg_color>
+
+Foreground color.
+
+Default value is white.
 
 =item * C<-h>
 
