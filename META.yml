@@ -22,6 +22,9 @@ no_index:
     - t
     - xt
 requires:
+  Getopt::Std: 0
+  Tickit: 0
+  Tickit::Widget::HelloWorld::Common: 0
   perl: 5.6.0
 resources:
   bugtracker: https://github.com/michal-josef-spacek/App-Tickit-Hello/issues

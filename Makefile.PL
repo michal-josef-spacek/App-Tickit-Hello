@@ -19,14 +19,9 @@ name 'App-Tickit-Hello';
 perl_version 5.006;
 readme_from 'bin/tickit-hello';
 recursive_author_tests('xt');
-#requires 'Capture::Tiny' => 0;
-#requires 'File::Copy' => 0;
-#requires 'File::Path' => 0;
-#requires 'File::Spec::Functions' => 0;
-#requires 'File::Temp' => 0;
-#requires 'Getopt::Std' => 0;
-#requires 'IO::Barf' => 0;
-#requires 'Readonly' => 0;
+requires 'Getopt::Std' => 0;
+requires 'Tickit' => 0;
+requires 'Tickit::Widget::HelloWorld::Common' => 0;
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/App-Tickit-Hello/issues',
 resources 'homepage' => 'https://github.com/michal-josef-spacek/App-Tickit-Hello';
 resources 'repository' => 'git://github.com/michal-josef-spacek/App-Tickit-Hello';
